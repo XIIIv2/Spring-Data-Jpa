@@ -36,7 +36,7 @@ public class PostServiceImpl implements PostService {
         userRepository.findById(request.authorId()).ifPresent(author -> {
             author.addPost(post);
         });
-        return repository.save(post);
+        return repository.saveAndFlush(post);
     }
 
     @Override
@@ -54,7 +54,7 @@ public class PostServiceImpl implements PostService {
         Objects.requireNonNull(id, "id is null");
         Objects.requireNonNull(request, "request is null");
         Post post = repository.findById(id).orElse(null);
-        return (post != null) ? repository.save(mapper.dtoToEntity(post, request)) :  null;
+        return (post != null) ? repository.saveAndFlush(mapper.dtoToEntity(post, request)) :  null;
     }
 
     public boolean deleteById(Long id){

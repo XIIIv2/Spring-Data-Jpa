@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
     public User create(UserDtoRequest request) {
         Objects.requireNonNull(request, "request is null");
         User user = mapper.dtoToEntity(request);
-        return repository.save(user);
+        return repository.saveAndFlush(user);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService {
         Objects.requireNonNull(request, "request is null");
         User user = repository.findById(id).orElse(null);
         if (user != null) {
-            return repository.save(mapper.dtoToEntity(user, request));
+            return repository.saveAndFlush(mapper.dtoToEntity(user, request));
         }
         return null;
     }
