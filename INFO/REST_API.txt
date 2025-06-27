@@ -1,0 +1,94 @@
+*** Spring-Data-Jpa REST App ***
+
+##### Users #####
+
+---- CREATE ----
+POST http://localhost:8080/api/v1/users
+
+{
+    "name": "Bob Smith",
+    "email": "bob.smith@example.org"
+}
+
+{
+    "name": "John Doe",
+    "email": "john.doe@gmail.com"
+}
+
+{
+    "name": "Jane Doe",
+    "email": "jane.doe@gmail.com"
+}
+
+---- GET ALL ----
+GET http://localhost:8080/api/v1/users
+
+---- GET BY ID ----
+GET http://localhost:8080/api/v1/users/1
+GET http://localhost:8080/api/v1/users/3
+
+---- GET BY NAME ----
+GET http://localhost:8080/api/v1/users/name/john doe
+GET http://localhost:8080/api/v1/users/name/jane doe
+
+---- GET BY EMAIL ----
+GET http://localhost:8080/api/v1/users/email/john.doe@gmail.com
+GET http://localhost:8080/api/v1/users/email/bob.smith@example.org
+GET http://localhost:8080/api/v1/users/email/@gmail.com
+
+---- UPDATE ----
+PUT http://localhost:8080/api/v1/users/1
+{
+    "name": "Bob Smith 123",
+    "email": "bob.smith@example.org"
+}
+
+---- DELETE BY ID ----
+DELETE http://localhost:8080/api/v1/users/1
+
+##### POSTS #####
+
+---- CREATE ----
+POST http://localhost:8080/api/v1/posts
+
+{
+    "title": "Donec vitae iaculis libero, id viverra nibh",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet dictum odio. Donec facilisis efficitur sem nec ornare. Integer euismod nibh sit amet semper ultrices. Donec volutpat nibh et elit condimentum, sed semper mauris ultrices. Morbi posuere mi augue, quis varius sem luctus at. Nam in velit ex. Nunc accumsan, tortor in molestie mattis, orci nisi scelerisque urna, vitae tincidunt diam risus vel elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut mauris neque, tristique nec sapien ac, iaculis hendrerit purus. Cras posuere felis vitae mattis ullamcorper. Nunc mattis tellus velit, a imperdiet velit venenatis scelerisque. Vivamus viverra leo justo. Aenean consequat mauris nisl, sed fermentum massa faucibus quis.",
+    "authorId": 2
+}
+
+{
+    "title": "Donec vitae iaculis libero, id viverra nibh 2",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet dictum odio. Donec facilisis efficitur sem nec ornare. Integer euismod nibh sit amet semper ultrices. Donec volutpat nibh et elit condimentum, sed semper mauris ultrices. Morbi posuere mi augue, quis varius sem luctus at. Nam in velit ex. Nunc accumsan, tortor in molestie mattis, orci nisi scelerisque urna, vitae tincidunt diam risus vel elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut mauris neque, tristique nec sapien ac, iaculis hendrerit purus. Cras posuere felis vitae mattis ullamcorper. Nunc mattis tellus velit, a imperdiet velit venenatis scelerisque. Vivamus viverra leo justo. Aenean consequat mauris nisl, sed fermentum massa faucibus quis. 2",
+    "authorId": 2
+}
+
+{
+    "title": "Donec vitae iaculis libero, id viverra nibh 3",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet dictum odio. Donec facilisis efficitur sem nec ornare. Integer euismod nibh sit amet semper ultrices. Donec volutpat nibh et elit condimentum, sed semper mauris ultrices. Morbi posuere mi augue, quis varius sem luctus at. Nam in velit ex. Nunc accumsan, tortor in molestie mattis, orci nisi scelerisque urna, vitae tincidunt diam risus vel elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut mauris neque, tristique nec sapien ac, iaculis hendrerit purus. Cras posuere felis vitae mattis ullamcorper. Nunc mattis tellus velit, a imperdiet velit venenatis scelerisque. Vivamus viverra leo justo. Aenean consequat mauris nisl, sed fermentum massa faucibus quis. 3",
+    "authorId": 3
+}
+
+{
+    "title": "Donec vitae iaculis libero, id viverra nibh 4",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet dictum odio. Donec facilisis efficitur sem nec ornare. Integer euismod nibh sit amet semper ultrices. Donec volutpat nibh et elit condimentum, sed semper mauris ultrices. Morbi posuere mi augue, quis varius sem luctus at. Nam in velit ex. Nunc accumsan, tortor in molestie mattis, orci nisi scelerisque urna, vitae tincidunt diam risus vel elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut mauris neque, tristique nec sapien ac, iaculis hendrerit purus. Cras posuere felis vitae mattis ullamcorper. Nunc mattis tellus velit, a imperdiet velit venenatis scelerisque. Vivamus viverra leo justo. Aenean consequat mauris nisl, sed fermentum massa faucibus quis. 4",
+    "authorId": 3
+}
+
+---- GET ALL ----
+GET http://localhost:8080/api/v1/posts
+
+---- GET BY ID ----
+GET http://localhost:8080/api/v1/posts/1
+GET http://localhost:8080/api/v1/posts/3
+
+---- UPDATE ----
+PUT http://localhost:8080/api/v1/posts/1
+{
+    "title": "Updated Title 123",
+    "content": "Updated content 123"
+    "authorId": 2
+}
+
+---- DELETE BY ID ----
+DELETE http://localhost:8080/api/v1/posts/3
